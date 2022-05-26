@@ -21,7 +21,6 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 1rem; */
   background-color: var(--clr-white);
   border-radius: 5px;
   padding: 0 1.5rem 2rem;
@@ -30,7 +29,7 @@ img {
 }
 .card div {
   position: relative;
-  top: -2.75rem;
+  transform: translateY(-50%);
   background-color: var(--clr-dviolet);
   padding: 1.5rem;
   border-radius: 50%;
@@ -66,16 +65,27 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 1.5rem 4rem;
-  background-color: hsl(230, 25%, 95%);
 }
+.section-1 {
+  padding: 2rem 1.5rem 0;
+}
+.section-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: hsl(230, 25%, 95%);
+  padding: 6rem 1.5rem 5rem;
+}
+.main-parag {
+  margin-top: 4rem;
+}
+
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  padding-block: 0 4rem;
+  padding-block: 3rem 4rem;
   background-color: var(--clr-vdviolet);
   color: (--clr-white);
   font-size: 0.9rem;
@@ -86,22 +96,20 @@ a {
   text-decoration: none;
 }
 
-.foot-content {
+.section-3 {
   background-color: var(--clr-dviolet);
   background-image: url(../images/bg-boost-mobile.svg);
   background-repeat: no-repeat;
   background-size: cover;
   padding-block: 5.5rem;
   align-self: stretch;
-  margin-bottom: 1rem;
 }
-.foot-content h2 {
+.section-3 h2 {
   color: var(--clr-white);
 }
 
-footer img {
-  color: var(--clr-white);
-  cursor: pointer;
+footer img[alt='logo'] {
+  filter: brightness(0) invert(1);
 }
 footer div:last-of-type {
   display: flex;
@@ -122,11 +130,15 @@ h1 {
   line-height: 1.2;
 }
 
+.sub-content p {
+  margin-block: 0.75rem 2rem;
+}
+
 .sub-content {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
 }
 
 button {
@@ -141,6 +153,8 @@ button {
   cursor: pointer;
 }
 form {
+  position: relative;
+  transform: translateY(50%);
   background-image: url(../images/bg-shorten-mobile.svg);
   background-repeat: no-repeat;
   background-position: top right;
@@ -151,7 +165,7 @@ form {
   align-items: center;
   border-radius: 10px;
   padding: 1.5rem;
-  margin-block: 3rem;
+  /* margin-block: 3rem; */
 }
 
 form > * {
@@ -183,6 +197,7 @@ h2 {
 h3 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
+  line-height: 1;
 }
 h4 {
   margin-bottom: 1rem;
