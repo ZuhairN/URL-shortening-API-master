@@ -1,16 +1,75 @@
 :root {
-  --clr-cyan: hsl(180, 66%, 49%);
-  --clr-dviolet: hsl(257, 27%, 26%);
-  --clr-vdviolet: hsl(260, 8%, 14%);
-  --clr-gviolet: hsl(257, 7%, 63%);
-  --clr-gray: hsl(0, 0%, 75%);
-  --clr-white: hsl(0, 0%, 100%);
-  --clr-red: hsl(0, 87%, 67%);
-  --clr-vdblue: hsl(255, 11%, 22%);
+  --clr-cyan: 180 66% 49%;
+  --clr-dviolet: 257 27% 26%;
+  --clr-vdviolet: 260 8% 14%;
+  --clr-gviolet: 257 7% 63%;
+  --clr-gray: 0 0% 75%;
+  --clr-white: 0 0% 100%;
+  --clr-red: 0 87% 67%;
+  --clr-vdblue: 255 11% 22%;
+}
+
+.nav-logo {
+  background-image: url(../images/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  filter: brightness(0.4);
+  position: fixed;
+  top: 2rem;
+  right: 1.5rem;
+  z-index: 1000;
 }
 
 nav ul {
-  display: none;
+  position: fixed;
+  top: 5.5rem;
+  left: 5%;
+  width: 90%;
+  height: 23.6rem;
+  z-index: 100;
+  background-color: hsl(var(--clr-dviolet));
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  gap: 1.5rem;
+  transition: transform 300ms ease-out, opacity 400ms ease-out;
+  transform: translateY(-125%);
+  opacity: 0;
+}
+
+nav ul[aria-expanded='true'] {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.login {
+  margin-top: auto;
+}
+
+.login::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: hsl(var(--clr-gviolet) / 0.3);
+  position: relative;
+  top: -2.3rem;
+}
+
+.sign-up {
+  background-color: hsl(var(--clr-cyan));
+  padding: 0.75rem 0;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+nav ul a {
+  color: hsl(var(--clr-white));
+  font-family: inherit;
+  font-weight: 700;
 }
 
 img {
@@ -21,7 +80,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--clr-white);
+  background-color: hsl(var(--clr-white));
   border-radius: 5px;
   padding: 0 1.5rem 2rem;
   margin-top: 4rem;
@@ -30,7 +89,7 @@ img {
 .card div {
   position: relative;
   transform: translateY(-50%);
-  background-color: var(--clr-dviolet);
+  background-color: hsl(var(--clr-dviolet));
   padding: 1.5rem;
   border-radius: 50%;
 }
@@ -41,8 +100,7 @@ img {
 .card + .card::after {
   content: '';
   width: 0.5rem;
-  background-color: var(--clr-cyan);
-  color: var(--clr-cyan);
+  background-color: hsl(var(--clr-cyan));
   height: 3.25rem;
   position: absolute;
   top: -6rem;
@@ -59,6 +117,7 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem 1.5rem 0;
 }
 
@@ -67,7 +126,7 @@ main {
   flex-direction: column;
 }
 .section-1 {
-  padding: 2rem 1.5rem 0;
+  padding: 1.5rem 1.5rem 0;
 }
 .section-2 {
   display: flex;
@@ -86,18 +145,18 @@ footer {
   align-items: center;
   gap: 2.5rem;
   padding-block: 3rem 4rem;
-  background-color: var(--clr-vdviolet);
+  background-color: hsl(var(--clr-vdviolet));
   color: (--clr-white);
   font-size: 0.9rem;
 }
 
 a {
-  color: var(--clr-gray);
+  color: hsl(var(--clr-gray));
   text-decoration: none;
 }
 
 .section-3 {
-  background-color: var(--clr-dviolet);
+  background-color: hsl(var(--clr-dviolet));
   background-image: url(../images/bg-boost-mobile.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,7 +164,7 @@ a {
   align-self: stretch;
 }
 .section-3 h2 {
-  color: var(--clr-white);
+  color: hsl(var(--clr-white));
 }
 
 footer img[alt='logo'] {
@@ -122,7 +181,7 @@ footer li {
   width: 150%;
 }
 p {
-  color: var(--clr-gviolet);
+  color: hsl(var(--clr-gviolet));
 }
 
 h1 {
@@ -142,8 +201,8 @@ h1 {
 }
 
 button {
-  color: var(--clr-white);
-  background-color: var(--clr-cyan);
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-cyan));
   padding: 1rem 3rem;
   font-family: inherit;
   font-weight: 700;
@@ -158,7 +217,7 @@ form {
   background-image: url(../images/bg-shorten-mobile.svg);
   background-repeat: no-repeat;
   background-position: top right;
-  background-color: var(--clr-dviolet);
+  background-color: hsl(var(--clr-dviolet));
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -179,7 +238,7 @@ form input {
   font-size: 1rem;
   padding: 0.6rem 1rem;
   border: none;
-  color: var(--clr-dviolet);
+  color: hsl(var(--clr-dviolet));
 }
 
 h1,
@@ -187,7 +246,7 @@ h2,
 h3,
 h4 {
   font-weight: 700;
-  color: var(--clr-vdblue);
+  color: hsl(var(--clr-vdblue));
 }
 
 h2 {
@@ -201,5 +260,5 @@ h3 {
 }
 h4 {
   margin-bottom: 1rem;
-  color: var(--clr-white);
+  color: hsl(var(--clr-white));
 }
