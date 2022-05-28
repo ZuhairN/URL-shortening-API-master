@@ -262,3 +262,29 @@ h4 {
   margin-bottom: 1rem;
   color: hsl(var(--clr-white));
 }
+
+.linkCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: hsl(var(--clr-white));
+  border-radius: 5px;
+}
+.linkCard p:first-child {
+  color: hsl(var(--clr-vdviolet));
+  border-bottom: 2px solid hsl(var(--clr-gray) / 0.3);
+  width: 100%;
+  padding: 1rem 1.5rem 0.5rem;
+  text-align: start;
+}
+.linkCard p:nth-child(2) {
+  color: hsl(var(--clr-cyan));
+  padding: 0.5rem 1.5rem;
+}
+.linkCard button {
+  padding: 0.5rem 1.5rem;
+  margin: 0 1.5rem 1.5rem;
+  align-self: stretch;
+  border-radius: 5px;
+}
