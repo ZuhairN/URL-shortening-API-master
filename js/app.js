@@ -1,7 +1,9 @@
 'use strict';
 
 let linkList = [];
-linkList = JSON.parse(localStorage.getItem('lkList'));
+if (localStorage.getItem('lkList')) {
+  linkList = JSON.parse(localStorage.getItem('lkList'));
+}
 
 const nav = document.querySelector('.nav');
 const navLogo = document.querySelector('.nav-logo');
@@ -20,9 +22,10 @@ if (linkList.length) {
     const shLink = document.createElement('p');
     shLink.textContent = lk.shortLink;
     linkCard.append(shLink);
-    const cpbtn = document.createElement('button');
-    cpbtn.textContent = 'Copy';
-    linkCard.append(cpbtn);
+    const btn = document.createElement('button');
+    btn.setAttribute('class', 'btn');
+    btn.textContent = 'Copy';
+    linkCard.append(btn);
   }
 } else {
   console.log('no-links');
@@ -67,9 +70,10 @@ form.addEventListener('submit', (e) => {
         const shLink = document.createElement('p');
         shLink.textContent = data.short_link;
         linkCard.append(shLink);
-        const cpbtn = document.createElement('button');
-        cpbtn.textContent = 'Copy';
-        linkCard.append(cpbtn);
+        const btn = document.createElement('button');
+        btn.setAttribute('class', 'btn');
+        btn.textContent = 'Copy';
+        linkCard.append(btn);
       }
       localStorage.setItem('lkList', JSON.stringify(linkList));
     } catch (e) {
@@ -81,11 +85,9 @@ form.addEventListener('submit', (e) => {
 });
 section2.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
-    console.log('clicked');
     e.target.classList.add('bg-dviolet');
     e.target.textContent = 'Copied!';
     console.log(e.target.previousElementSibling.textContent);
     navigator.clipboard.writeText(e.target.previousElementSibling.textContent);
   }
 });
-// need save data in array with local storage
