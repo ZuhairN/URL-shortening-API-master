@@ -85,7 +85,7 @@ form.addEventListener('submit', (e) => {
 });
 section2.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
-    e.target.classList.add('bg-dviolet');
+    e.target.classList.add('bg-d-violet');
     e.target.textContent = 'Copied!';
     console.log(e.target.previousElementSibling.textContent);
     navigator.clipboard.writeText(e.target.previousElementSibling.textContent);

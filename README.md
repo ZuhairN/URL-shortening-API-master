@@ -6,8 +6,8 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshots](#screenshots)
-  - [Links](#links)
+  - [Screenshot](#screenshot)
+  - [Link](#link)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Continued development](#continued-development)
@@ -25,9 +25,11 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-### Screenshots
+### Screenshot
 
-### Links
+![Desktop](./images/Desktop-view.png)
+
+### Link
 
 - [Live Site URL](https://zuhairn.github.io/URL-shortening-API-master/)
 
@@ -41,3 +43,6 @@ Users should be able to:
 - Mobile-first workflow
 
 ### Continued development
+
+- Making proper and responsive layouts
+- Dealing with AJAX & APIs
